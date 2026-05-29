@@ -45,6 +45,7 @@ Collections and Services}
 \editor{Markus Demleitner}
 \editor{Ray Plante}
 
+\previousversion[https://www.ivoa.net/documents/VODataService/20260324]{WD-1.3-20260324}
 \previousversion[https://www.ivoa.net/documents/VODataService/20241113]{WD-1.3-20241113}
 \previousversion[https://www.ivoa.net/documents/VODataService/20211102]{REC-1.2}
 \previousversion[https://ivoa.net/documents/VODataService/20190715/PR-VODataService-1.2-20210223.html]{PR-2021-02-23}
@@ -2709,15 +2710,19 @@ a table.
 \begin{description}
 \item[Type] string: \xmlel{xs:token}
 \item[Meaning] A keyword representing traits of the column.
-                        Recognized values include “indexed”, “primary”, and
-                        “nullable”.
+                        Recognized values include “indexed”, “primary”,
+                        “nullable”, and “no-where”.
 \item[Occurrence] optional; multiple occurrences allowed.
 \item[Comment] While other values are allowed, the following semantics
                      	is defined by this specification: indexed – The column
                      	has an index on it for faster search against its values;
                      	primary – The values column in the column represent in
                      	total or in part a primary key for its table; nullable –
-                     	the column may contain null or empty values.
+                     	the column may contain null or empty values;
+                     	no-where – one cannot (simply) use this column in
+                     	ADQL WHERE clauses or similar places, for instance
+                     	because it is generated outside of a database or
+                     	because no operators exist for the column type.
 
 \end{description}
 
@@ -2883,6 +2888,12 @@ explain their schema in an IVOA Note.
 
 \section{Changes from previous versions}
 
+\subsection{Changes since WD-1.3-20260324}
+
+\begin{itemize}
+\item ``no-where'' is a new TableParam flag to indicate columns with
+content that cannot be used in ADQL constraints.
+\end{itemize}
 
 \subsection{Changes since WD-1.3-20241113}
 

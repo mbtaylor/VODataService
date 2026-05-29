@@ -7,10 +7,10 @@ DOCNAME = VODataService
 DOCVERSION = 1.3
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2026-03-24
+DOCDATE = 2026-04-15
 
 # What is it you're writing: NOTE, WD, PR, REC, PEN, or EN
-DOCTYPE = WD
+DOCTYPE = PR
 
 # Source files for the TeX document (but the main file must always
 # be called $(DOCNAME).tex
